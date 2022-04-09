@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Информация о заказе</h1>
+    <hr>
+    <h2 style="background-color: rgb(132, 212, 132); text-align: center;">Идентификатор заказа: <i>{{.OrderUid}}</i></h2>
+    <div style="font-size: x-large; background-color: rgb(191, 240, 191)">
+        <ul>
+            <li>TrackNumber: <b>{{.TrackNumber}}</b></li>
+            <li>Entry: <b>{{.Entry}}</b></li>
+            <li>Delivery: <ul><li><b>Name: {{.Delivery.Name}}</b></li>
+                <li><b>Phone: {{.Delivery.Phone}}</b></li>
+                <li><b>Zip: {{.Delivery.Zip}}</b></li>
+                <li><b>City: {{.Delivery.City}}</b></li>
+                <li><b>Address: {{.Delivery.Address}}</b></li>
+                <li><b>Region: {{.Delivery.Region}}</b></li>
+                <li><b>Email: {{.Delivery.Email}}</b></li>
+            </ul>
+            <li>Payment: <ul>
+                <li><b>Transaction: {{.Payment.Transaction}}</b></li>
+                <li><b>RequestId: {{.Payment.RequestId}}</b></li>
+                <li><b>Currency: {{.Payment.Currency}}</b></li>
+                <li><b>Provider: {{.Payment.Provider}}</b></li>
+                <li><b>Amount: {{.Payment.Amount}}</b></li>
+                <li><b>PaymentDt: {{.Payment.PaymentDt}}</b></li>
+                <li><b>Bank: {{.Payment.Bank}}</b></li>
+                <li><b>Delivery-Cost: {{.Payment.DeliveryCost}}</b></li>
+                <li><b>Goods-Total: {{.Payment.GoodsTotal}}</b></li>
+                <li><b>CustomFee: {{.Payment.CustomFee}}</b></li>
+            </ul></li>
+            <li>Items: <ul>
+                <hr>
+                <ul>{{range .Items}}
+                    <li><b>Chrt Id: {{.ChrtId}}</b>
+                        <ul>
+                            <li>Track-Number: {{.TrackNumber}}</li>
+                            <li>Price: {{.Price}}</li>
+                            <li>Rid: {{.Rid}}</li>
+                            <li>Name: {{.Name}}</li>
+                            <li>Sale: {{.Sale}}</li>
+                            <li>Size: {{.Size}}</li>
+                            <li>Total price: {{.Total_price}}</li>
+                            <li>Nm-id: {{.Nm_id}}</li>
+                            <li>Brand: {{.Brand}}</li>
+                            <li>Status: {{.Status}}</li>
+                        </ul>
+                    </li>
+                    <br>
+                    {{end}}
+                </ul>
+                <hr>
+            </ul></li>
+            <li>Locale: <b>{{.Locale}}</b></li>
+            <li>Internal Signature: <b>{{.InternalSignature}}</b></li>
+            <li>Customer Id: <b>{{.CustomerId}}</b></li>
+            <li>Delivery Service: <b>{{.DeliveryService}}</b></li>
+            <li>Shard Key: <b>{{.Shardkey}}</b></li>
+            <li>Sm Id: <b>{{.SmId}}</b></li>
+            <li>Date: <b>{{.DateCreated}}</b></li>
+            <li>OofShard: <b>{{.OofShard}}</b></li>
+           
+        </ul>
+        
+    </div>
+    
+    
+</body>
+</html>
