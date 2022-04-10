@@ -35,6 +35,7 @@ func HandleMsg(msg *stan.Msg) {
 		fmt.Printf("JSON unmarshal error: %s", err.Error())
 	} else {
 		dbWriteOrder(m)
+		cache.RecentOrders[m.OrderUid] = m
 	}
 
 }
